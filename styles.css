@@ -1,0 +1,127 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Title styling (used for all titles, including login pages and homepage) */
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Button container for the login and homepage buttons */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Common button styling (used across all buttons on all pages) */
+button, .big-button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 15px 20px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: 200px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover, .big-button:hover {
+    background-color: #4cae4c;
+}
+
+/* General button styling (for forms and other interactions) */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Styling for the Logout link on homepage */
+.logout-link {
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Container styling for login buttons on index.html */
+.login-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific styling for the login page buttons */
+.login-buttons a {
+    text-decoration: none;
+    color: white;
+}
+
+.login-buttons .button {
+    background-color: #5cb85c;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.login-buttons .button:hover {
+    background-color: #4cae4c;
+}
+
+/* For small devices, make sure everything still fits well */
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: 28px;
+    }
+    
+    button, .big-button {
+        font-size: 18px;
+        padding: 12px 15px;
+        width: 180px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/*.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Optional, for consistent width */
+ /*   margin: 0 auto; /* Center horizontally */
+   /* padding: 20px; /* Optional, for spacing */
+   /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional, for aesthetic */
+   /* background-color: #fff; /* Optional, for visual clarity */
+   /* border-radius: 8px; /* Optional, for rounded edges */
+/*} 
