@@ -120,7 +120,7 @@ button {
 }
 
 .navbar {
-    background-color: #D8B9F; 
+    background-color: #D8B9FD; 
     position: fixed; 
     top: 0;
     left: 0;
@@ -148,7 +148,7 @@ button {
 
 /* Active or currently selected link styling (optional) */
 .navbar a.active {
-    background-color:#D8B9F ; /* Slightly different background for active link */
+    background-color:#D8B9FD ; /* Slightly different background for active link */
 }
 
 /* Responsive design for mobile view */
