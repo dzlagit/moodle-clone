@@ -1,0 +1,45 @@
+login successful ->
+    session id generated if new login and stored in user database
+        (if not taken from database)
+    userid taken from database, 0 = staff, 1 = student
+    super global variable
+
+Database Setup:
+Created a database named user_management.
+Set up a users table with the required fields: id, first_name, last_name, username, password, and user_type.
+
+Registration Form:
+Created an HTML registration form with fields for first_name, last_name, username, and password.
+Added a dropdown menu to select user_type (Staff or Student).
+Implemented client-side validation for required fields and password strength.
+
+Registration Logic:
+Wrote a register.php file to handle form submissions.
+Validated server-side input to ensure all fields are filled.
+Hashing passwords securely using password_hash() with PASSWORD_DEFAULT.
+Inserted user details into the database with the correct user_type (0 for Staff, 1 for Student).
+
+Login Form:
+Created an HTML login form with fields for username and password.
+Login Logic:
+
+Wrote a login.php file to handle login requests.
+Verified username exists in the database.
+Verified the password using password_verify() for hashed passwords.
+Used PHP sessions to store user details on successful login.
+Redirected users based on user_type (Staff to staffhomepage.html, Student to studenthomepage.html).
+
+Error Handling:
+Displayed appropriate error messages for incorrect username or password.
+Handled database connection errors gracefully.
+
+Testing:
+Tested user registration for both Staff and Student roles.
+Verified password hashing and login functionality.
+Resolved issues with user type (user_type defaulting to 0 was causing validation issues).
+Ensured registration and login workflows work for both Staff and Student.
+
+Security Enhancements:
+Used prepared statements in PHP to prevent SQL injection.
+Implemented password hashing to store passwords securely.
+Ensured all inputs are validated and sanitized.
