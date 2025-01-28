@@ -15,14 +15,13 @@
     <h2 class="subtitle">Welcome, Student!</h2>
 
     <!-- Logout link -->
-    <a href="index.html" class="logout-link">Logout</a>
+    <a href="index.php" class="logout-link">Logout</a>
 
     <!-- Button container for profile, courses, quizzes, and calendar -->
     <div class="button-container">
-        <button class="big-button">Profile</button>
-        <button class="big-button">Courses</button>
-      <!-- <button class="big-button">Quizzes</button> -->
-        <button class="big-button">Calendar</button>
+        <a href="/profile.php" class="big-button">Profile</a>
+        <a href="/courses.php" class="big-button">Courses</a>
+        <a href="/calendar.php" class="big-button">Calendar</a>
     </div>
 </body>
 </html>
