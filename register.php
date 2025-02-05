@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Debugging: Output the collected values
     // Uncomment these lines for debugging
-    echo "First Name: $first_name, Last Name: $last_name, Username: $username, Password: $password, User Type: $user_type<br>";
+    //echo "First Name: $first_name, Last Name: $last_name, Username: $username, Password: $password, User Type: $user_type<br>";
 
     // Validate input
     if (empty($first_name) || empty($last_name) || empty($username) || empty($password)) {
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Execute the query and check for success
     if ($stmt->execute()) {
         // Registration successful, redirect to index page
-        header("Location: index.html"); // Redirect to your index page
+        header("Location: index.php"); // Redirect to your index page
         exit; // Ensure no further code is executed
     } else {
         echo "Error: " . $stmt->error;
@@ -48,3 +48,68 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register here:</h2>
+        <form id="staff-register" action="register.php" method="POST">
+            <!-- First Name Field -->
+            <label for="first_name">Enter First Name:</label>
+            <input 
+                type="text" 
+                id="first_name" 
+                name="first_name" 
+                placeholder="Enter first name" 
+                required>
+            
+            <!-- Last Name Field -->
+            <label for="last_name">Enter Last Name:</label>
+            <input 
+                type="text" 
+                id="last_name" 
+                name="last_name" 
+                placeholder="Enter last name" 
+                required>
+            
+            <!-- Username Field -->
+            <label for="username">Enter Username:</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                placeholder="Enter a unique username" 
+                required>
+            
+            <!-- Password Field -->
+            <label for="password">Enter Strong Password:</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                required 
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}" 
+                title="Password must be at least 8 characters long, with at least one uppercase letter, one lowercase letter, one number, and one special character."
+                placeholder="Create a strong password">
+            
+            <!-- User Type: Staff or Student -->
+            <label for="user_type">Select User Type:</label>
+            <select id="user_type" name="user_type" required>
+                <option value="0">Staff</option>
+                <option value="1">Student</option>
+            </select>
+            
+            <!-- Submit Button -->
+            <button type="submit">Register</button>            
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,6 +1,5 @@
 <?php
 session_start();
-header('Content-Type: application/json');
 
 // Database connection
 $conn = new mysqli('localhost', 'root', 'password', 'user_management');
@@ -26,7 +25,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
-    echo json_encode(['status' => 'success', 'user_type' => $user['user_type']]);
+    //echo json_encode(['status' => 'success', 'user_type' => $user['user_type']]);
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Invalid API key.']);
     exit;

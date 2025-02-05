@@ -1,11 +1,8 @@
 <?php
-require 'authapi.php';
+session_start();
 
-// Verify user type is staff (0)
-if ($_SESSION['user_type'] != 0) {
-    header("Location: unauthorized.html");
-    exit;
-}
+if (!isset($_SESSION['api_key']) || !isset($_SESSION['user_type']) || $_SESSION['user_type'] != 0) {
+    header("Location: index.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="en">

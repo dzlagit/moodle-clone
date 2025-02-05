@@ -3,7 +3,7 @@ require 'authapi.php';
 
 // Verify user type is student (1)
 if ($_SESSION['user_type'] != 1) {
-    header("Location: unauthorized.html");
+    header("Location: unauthorised.php");
     exit;
 }
 ?>

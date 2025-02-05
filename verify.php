@@ -12,7 +12,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['user_type'])) {
 function restrict_access($required_user_type) {
     if ($_SESSION['user_type'] != $required_user_type) {
         // Redirect to an unauthorized page or login page
-        header("Location: unauthorized.html");
+        header("Location: unauthorised.php");
         exit;
     }
 }
