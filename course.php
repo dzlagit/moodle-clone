@@ -1,7 +1,9 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$conn = new mysqli('localhost:3307', 'root', 'password', 'user_management');
+$conn = new mysqli('localhost', 'root', 'password', 'user_management');
 if ($conn->connect_error) {
     echo json_encode(['status' => 'error', 'message' => 'Database connection failed.']);
     exit;
