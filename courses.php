@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
-
 // Database connection
 $conn = new mysqli('localhost', 'root', 'password', 'user_management');
 if ($conn->connect_error) {
@@ -61,10 +60,8 @@ function get_all_students($conn) {
 </head>
 <body>
     <div class="container">
-        <h1>Here are your courses!</h1>
 
         <?php if ($user_type == 0): ?>
-            <p>View your courses that you can enroll students in below:</p>
 
             <div class="table-container">
                 <table>
@@ -91,17 +88,8 @@ function get_all_students($conn) {
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-            </div>
-
-            <h2>Create a New Course</h2>
-            <form action="createcourse.php" method="post">
-                <label for="course_name">Course Name:</label>
-                <input type="text" id="course_name" name="course_name" required>
-                <label for="course_description">Course Description:</label>
-                <textarea id="course_description" name="course_description" rows="4" required></textarea>
-                <button type="submit">Create Course</button>
-            </form>
-
+            </div>                   
+            
             <h2>Enroll a Student in a Course</h2>
             <form action="enroll.php" method="post">
                 <label for="course_id">Select a Course:</label>
@@ -128,7 +116,7 @@ function get_all_students($conn) {
 
                 <button type="submit">Enroll Student</button>
             </form>
-            <a href="staffhomepage.php">Back to staff homepage</a>
+           
 
         <?php elseif ($user_type == 1): ?>
             <?php 
@@ -161,6 +149,11 @@ function get_all_students($conn) {
             <p>You do not have permission to view this page.</p>
         <?php endif; ?>
     </div>
+    <nav class="navbar">
+        <a href="staffhomepage.php">Home</a>
+        <a href="index.php">Logout</a>
+
+    </nav>
 </body>
 </html>
 
