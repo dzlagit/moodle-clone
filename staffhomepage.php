@@ -20,15 +20,18 @@ header("Expires: 0");
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav cl ass="navbar">
-        <a href="courses.php">Courses</a>
-        <a href="quizzes.php">Quizzes</a>
-        <a href="uploadht.php">Upload Files</a> 
-        <a href="logout.php">Logout</a>
-    </nav>
 
     <h1 class="title">Ace Training</h1>
     <h2 class="subtitle">Welcome, Staff Member!</h2>
     <p>This page is accessible only to staff users.</p>
 </body>
+<nav class="navbar">
+        <a href="staffhomepage.php">Home</a>
+        <a href="courses.php">Courses</a>
+        <a href="create_quiz.php">Quizzes</a>
+        <a href="index.php">Logout</a>
+        <a href="upload.php">Upload Files</a>
+        
+        
+    </nav>
 </html>

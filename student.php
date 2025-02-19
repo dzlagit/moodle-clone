@@ -17,5 +17,11 @@ if ($_SESSION['user_type'] != 1) {
 <body>
     <h1>Welcome, Student!</h1>
     <p>This page is accessible only to student users.</p>
+    <nav class="navbar">
+        <a href="staffhomepage.php">Home</a>
+        <a href="courses.php">Courses</a>
+        <a href="quizzes.php">Quizzes</a>
+        <a href="index.php">Logout</a>
+    </nav>
 </body>
 </html>

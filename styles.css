@@ -1,32 +1,38 @@
-/* General body styling */
+/* 🌟 General body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #dd1515;
+    background-image: url("aiaiai.png"); /* Ensure this is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
+    overflow: auto;
 }
 
-/* Title styling (used for all titles, including login pages and homepage) */
+/* 🌟 Title styling (used for all titles, including login pages and homepage) */
 .title {
     text-align: center;
-    margin-bottom: 100px;
-    font-size: 80px;
+    margin-bottom: 50px;
+    font-size: 60px;
     font-weight: bold;
+    color: black;
 }
 
 .subtitle {
     text-align: center;
-    margin-bottom: 50px;
-    font-size: 45px;
+    margin-bottom: 30px;
+    font-size: 35px;
     font-weight: bold;
 }
 
-
-/* Button container for the login and homepage buttons */
+/* 🌟 Button container for the login and homepage buttons */
 .button-container {
     display: flex;
     flex-direction: column;
@@ -34,7 +40,7 @@ body {
     align-items: center;
 }
 
-/* Common button styling (used across all buttons on all pages) */
+/* 🌟 Common button styling (used across all buttons on all pages) */
 button, .big-button {
     background-color: #5cb85c;
     color: white;
@@ -44,23 +50,24 @@ button, .big-button {
     text-decoration: none;
     margin: 10px 0;
     border-radius: 5px;
-    width: 200px;
+    width: 250px;
     cursor: pointer;
     border: none;
+    transition: background 0.3s ease-in-out;
 }
 
 button:hover, .big-button:hover {
     background-color: #4cae4c;
 }
 
-/* General button styling (for forms and other interactions) */
+/* 🌟 General button styling (for forms and other interactions) */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
 }
 
-/* Styling for the Logout link on homepage */
+/* 🌟 Styling for the Logout link on homepage */
 .logout-link {
     text-align: center;
     margin-bottom: 20px;
@@ -74,7 +81,7 @@ button {
     color: #0056b3;
 }
 
-/* Container styling for login buttons on index.html */
+/* 🌟 Container styling for login buttons */
 .login-buttons {
     display: flex;
     flex-direction: column;
@@ -82,7 +89,7 @@ button {
     align-items: center;
 }
 
-/* Specific styling for the login page buttons */
+/* 🌟 Specific styling for the login page buttons */
 .login-buttons a {
     text-decoration: none;
     color: white;
@@ -102,6 +109,7 @@ button {
     background-color: #4cae4c;
 }
 
+/* 🌟 Responsive adjustments */
 @media only screen and (max-width: 600px) {
     .title {
         font-size: 28px;
@@ -118,60 +126,176 @@ button {
     }
 }
 
+/* 🌟 Navbar Styling */
 .navbar {
-    background-color: #D8B9FD; 
-    position: fixed; 
+    background-color: #4a7fbb;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; 
-    z-index: 1000; 
-    padding: 15px 0; 
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar a {
-    color: white; /* White text color */
-    text-decoration: none; /* Remove underline from links */
-    font-size: 20px; 
-    font-weight: bold; /* Bold text */
-    padding: 10px 20px; /* Space around the text */
-    margin: 0 15px; /* Horizontal spacing between the links */
-    text-transform: uppercase; 
-    transition: background-color 0.3s ease; 
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 15px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
 }
 
-/* Hover effect for navbar links */
+/* 🌟 Navbar Hover Effects */
 .navbar a:hover {
-    background-color: #9B7FE5; /* Darker background when hovered */
+    background-color: #170b36;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-/* Active or currently selected link styling (optional) */
+/* 🌟 Active or selected link */
 .navbar a.active {
-    background-color:#D8B9FD ; /* Slightly different background for active link */
+    background-color: #4f9ef8;
 }
 
-/* Responsive design for mobile view */
+/* 🌟 Responsive Navbar */
 @media (max-width: 768px) {
     .navbar {
-        text-align: center; /* Center links on smaller screens */
+        text-align: center;
     }
 
     .navbar a {
-        display: block; /* Stack the links vertically */
-        margin: 10px 0; /* Vertical spacing */
+        display: block;
+        margin: 10px 0;
     }
 }
 
+/* 🌟 Form Container (Login, Register, etc.) */
+/* 🌟 Make the login box more transparent */
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15) !important; /* More transparent */
+    backdrop-filter: blur(15px); /* Stronger blur effect */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 420px;
     text-align: center;
+}
+
+
+/* 🌟 Form Styling */
+/* 🌟 Center and Align Input Fields */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything */
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto; /* Center horizontally */
-    padding: 20px; /* Optional, for spacing */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional, for aesthetic */
-    background-color: #fff; /* Optional, for visual clarity */
-    border-radius: 8px; /* Optional, for rounded edges */
-} 
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 🌟 Input Fields */
+input {
+    width: 100%;
+    max-width: 350px; /* Ensure all inputs are same width */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* 🌟 Align labels */
+label {
+    width: 100%;
+    text-align: left; /* Align labels to the left */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 🌟 Date Inputs */
+input[type="datetime-local"] {
+    background: #f9f9f9;
+}
+
+/* 🌟 Green Add Event Button */
+button {
+    width: 100%;
+    max-width: 350px; /* Same width as inputs */
+    background-color: #5cb85c;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+.upload-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures the whole screen is used */
+}
+
+/* Keeps the form container in the correct place */
+.upload-container {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Adds space below the title */
+}
+
+/* Ensure input fields and button are properly aligned */
+.upload-container input,
+.upload-container button {
+    width: 100%;
+    max-width: 90%;
+}
+
+/* Label positioning */
+.upload-container label {
+    font-weight: bold;
+    text-align: left;
+    width: 90%;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.quiz-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+.quiz-option input {
+    margin-top: 5px;
+}
