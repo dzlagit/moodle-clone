@@ -2,7 +2,7 @@
 session_start();
 
 // Database connection
-$conn = new mysqli('localhost:3307', 'root', 'password', 'user_management');
+$conn = new mysqli('localhost', 'root', 'password', 'user_management');
 if ($conn->connect_error) {
     echo json_encode(['status' => 'error', 'message' => 'Database connection failed.']);
     exit;
@@ -63,7 +63,7 @@ $stmt = $conn->prepare($sql_enroll);
 $stmt->bind_param("ii", $course_id, $student_id);
 
 if ($stmt->execute()) {
-    header("Location: /course.php?id=$course_id");
+    header("Location: courses.php");
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Failed to enroll student.']);
 }

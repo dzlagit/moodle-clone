@@ -1,11 +1,9 @@
 <?php
 session_start();
 
-// Database connection
 $conn = new mysqli('localhost', 'root', 'password', 'user_management');
 if ($conn->connect_error) {
-    echo json_encode(['status' => 'error', 'message' => 'Database connection failed.']);
-    exit;
+    die("Database connection failed: " . $conn->connect_error);
 }
 
 // Collect login credentials
@@ -13,8 +11,7 @@ $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
 if (empty($username) || empty($password)) {
-    echo json_encode(['status' => 'error', 'message' => 'Username and password are required.']);
-    exit;
+    die("Username and password are required.");
 }
 
 // Fetch user from database
@@ -38,17 +35,22 @@ if ($result->num_rows === 1) {
         // Store API key and user info in session
         $_SESSION['api_key'] = $api_key;
         $_SESSION['user_type'] = $user['user_type'];
+        $_SESSION['user_id'] = $user['id']; // Ensure user_id is stored in session
+        $_SESSION['username'] = $user['username'];
+        $_SESSSION['first_name'] = $user['first_name'];
 
 
-        header("Location: " . ($user['user_type'] == 0 ? 'staffhomepage.php' : 'studenthomepage.php'));
-        //echo json_encode(['status' => 'success', 'redirect' => $user['user_type'] == 0 ? 'staffhomepage.html' : 'studenthomepage.html']);
+        // Redirect based on user type
+        if ($user['user_type'] == 0) {
+            header("Location: staffhomepage.php");
+        } else {
+            header("Location: studenthomepage.php");
+        }
         exit;
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Incorrect password.']);
-        exit;
+        die("Incorrect password.");
     }
 } else {
-    echo json_encode(['status' => 'error', 'message' => 'User not found.']);
-    exit;
+    die("User not found.");
 }
 ?>

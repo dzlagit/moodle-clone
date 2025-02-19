@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal | ACE Training </title>
-    <link rel="stylesheet" href="styles.css"> <!-- Ensure you link the combined CSS file here -->
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-    <div class="title">
-        Student Portal | ACE Training
-    </div>
-
     <h1 class="title">Ace Training</h1>
     <h2 class="subtitle">Welcome, Student!</h2>
 
-    <!-- Logout link -->
-    <a href="index.php" class="logout-link">Logout</a>
 
-    <!-- Button container for profile, courses, quizzes, and calendar -->
-    <div class="button-container">
-        <a href="/profile.php" class="big-button">Profile</a>
-        <a href="/courses.php" class="big-button">Courses</a>
-        <a href="/calendar.php" class="big-button">Calendar</a>
-    </div>
+    <a href="index.php" class="logout-link">Logout</a>
+    <nav class="navbar">
+        <a href="staffhomepage.php">Home</a>
+        <a href="courses.php">Courses</a>
+        <a href="student_quizzes.php">Quizzes</a>
+        <a href="view_text_files.php">Messages</a>
+        <a href="index.php">Logout</a>
+        <a href="calendar.php">Calendar</a>
+
+    </nav>
 </body>
 </html>

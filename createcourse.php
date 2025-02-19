@@ -6,7 +6,7 @@ if (!isset($_SESSION['api_key']) || $_SESSION['user_type'] != 0) {
 }
 
 // Database connection
-$conn = new mysqli('localhost:3307', 'root', 'password', 'user_management');
+$conn = new mysqli('localhost', 'root', 'password', 'user_management');
 if ($conn->connect_error) {
     echo json_encode(['status' => 'error', 'message' => 'Database connection failed.']);
     exit;

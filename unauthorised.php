@@ -8,6 +8,6 @@
 <body>
     <h1>Access Denied</h1>
     <p>You do not have permission to access this page.</p>
-    <a href="login.html">Return to Login</a>
+    <a href="index.php">Return to Login</a>
 </body>
 </html>
